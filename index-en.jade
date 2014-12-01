@@ -1,0 +1,90 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
+    title Justified Nav Template for Bootstrap
+    // Bootstrap core CSS
+    link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    .container
+      // Jumbotron
+      .jumbotron
+        h1
+          | Yandex.Tank
+          .small a performance measurement tool
+        blockquote
+          p Once we accept our limits, we go beyond them.
+          .small Albert Einstein
+          
+        p.lead
+          | Find out about your app’s performance limits and bottlenecks in order to use your resources in a most effective way. Ensure your app is scalable and find a way to make it scalable. Use Yandex.Tank to choose a reliable technology stack before you even started developing your product.
+        p
+          a.btn.btn-lg.btn-success(href='#install', role='button') Get started today
+      // Example row of columns
+      .row
+        .col-lg-4
+          h2 100 000+ RPS from one machine
+          p
+            | Use 
+            em phantom 
+            | load engine written in pure C++ to generate big amount of load from one machine.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+        .col-lg-4
+          h2 Interactive reports
+          p
+            | See how your system behaves under load while running the test. Save report when the test is over and email it to your colleagues.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+        .col-lg-4
+          h2 Monitoring out-of-the-box
+          p
+            | Collect all your system and business metrics by configuring monitoring plugin. The resources of the host you shooting at are monitored by default.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+      .row
+        .col-lg-4
+          h2 Multiple load engines
+          p
+            | Use JMeter to test complex scenarios or BFG (experimental) for exotic protocols. Implement your own module for your favorite tool and use Tank’s features like OnlineReport with it.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+        .col-lg-4
+          h2 Integration
+          p
+            | Use Yandex.Tank with Jenkins or other CI to automate your load tests. Store reports online. Stop your tests automatically using customizable criteria.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+        .col-lg-4
+          h2 Simple ammo format
+          p
+            | Use your access.log for shooting or generate ammo from your logs using simple script.
+          p
+            a.btn.btn-primary(href='#', role='button') View details &raquo;
+      .row#install
+        .col-lg-6
+          h2 Install from PPA
+          p
+            | Installation on debian-based distros is as easy as:
+            .code
+              |...
+        .col-lg-6
+          h2 Download archive
+          p
+            | Download
+      // Site footer
+      .footer
+        p &copy; Yandex 2014
+    // /container
+    
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    
