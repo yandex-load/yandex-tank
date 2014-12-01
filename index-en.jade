@@ -65,7 +65,7 @@ html(lang='en')
         .col-lg-4
           h2 Integration
           p
-            | Use Yandex.Tank with Jenkins or other CI to automate your load tests. Store reports online. Stop your tests automatically using customizable criteria.
+            | Use Yandex.Tank with Jenkins or other CI software to automate your load tests. Store reports online. Stop your tests automatically using customizable criteria.
           p
             a.btn.btn-primary(href='#', role='button') View details &raquo;
         .col-lg-4
@@ -74,21 +74,27 @@ html(lang='en')
             | Use your access.log for shooting or generate ammo from your logs using simple script.
           p
             a.btn.btn-primary(href='#', role='button') View details &raquo;
+      hr
       .row#install
         .col-lg-6
           h2 Install from PPA
           p
-            | Installation on debian-based distros is as easy as:
-            .code
-              |...
+            | Add our repository and install:
+            pre
+              | sudo add-apt-repository ppa:yandex-load/main
+              | sudo apt-get update && sudo apt-get install yandex-load-tank-base
         .col-lg-6
           h2 Download archive
           p
-            | Download
+            a(href="https://github.com/yandex/yandex-tank/archive/master.zip")
+              span.glyphicon.glyphicon-download-alt(aria-hidden="true")
+              | &nbsp;download .zip
+      hr
       // Site footer
       .footer
         p &copy; Yandex 2014
     // /container
     
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
     
