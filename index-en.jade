@@ -18,21 +18,25 @@ html(lang='en')
     .container
       // Jumbotron
       .jumbotron
-        h1
-          | Yandex.Tank
-          .small a performance measurement tool
-        blockquote.blockquote-reverse
-          p Once we accept our limits, we go beyond them.
-          footer Albert Einstein
-          
-        p.lead
-          | Find out about your app’s performance limits and bottlenecks in order to use your resources in a most effective way. Ensure your app is scalable and find a way to make it scalable. Use Yandex.Tank to choose a reliable technology stack before you even started developing your product.
-        p
-          a.btn.btn-lg.btn-success(href='#install', role='button') Get started today
+        .row
+          .col-lg-6
+            img.img-rounded(src='images/tank192.jpg')
+            h1
+              | Yandex.Tank
+            p
+              i a performance measurement tool
+          .col-lg-6
+            blockquote
+              p Once we accept our limits, we go beyond them.
+              footer Albert Einstein
+            p
+              | Find out about your app’s performance limits and bottlenecks in order to use your resources in a most effective way. Ensure your app is scalable and find a way to make it scalable. Use Yandex.Tank to choose a reliable technology stack before you even started developing your product.
+            p
+              a.btn.btn-lg.btn-success(href='#install', role='button') Get started today
       // Example row of columns
       .row
         .col-lg-4
-          h2 100 000+ RPS from one machine
+          h2 100 000+ RPS
           p
             | Use 
             em phantom 
@@ -46,7 +50,7 @@ html(lang='en')
           p
             a.btn.btn-primary(href='#', role='button') View details &raquo;
         .col-lg-4
-          h2 Monitoring out-of-the-box
+          h2 Monitoring plugin
           p
             | Collect all your system and business metrics by configuring monitoring plugin. The resources of the host you shooting at are monitored by default.
           p
