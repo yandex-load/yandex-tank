@@ -6,10 +6,20 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
+    title Yandex.Tank: a performance measurement tool
     link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
-    title Justified Nav Template for Bootstrap
-    // Bootstrap core CSS
     link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', rel='stylesheet')
+      
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.css")
+
+    style(type="text/css")
+      | .rickshaw_legend li {
+      |   display: inline-block;
+      |   padding: 0 0 0 2px;
+      |   min-width: 80px;
+      |   white-space: nowrap;
+      | }  
+      
     // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     //if lt IE 9
       script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
@@ -105,7 +115,17 @@ html(lang='en')
         .col-lg-12
           h2 reports
           p
-            | interactive report example
+            | One look is worth a thousand words, so here is an interactive example. This is one of the most important charts from the report that Tank shows you: quantile graph. There are response time quantiles for each second on it, so that you can examine that, for example, at 16:16:54 75% of responses were faster then 45 milliseconds. Give it a try!
+          .app.container(ng-app="ng-tank-report", ng-controller="TankReport")
+            .panel.panel-default
+              .panel-heading
+                h3.panel-title {{quantiles.name}}
+              .panel-body
+                rickshaw.panel-body(
+                  rickshaw-series="quantiles.series",
+                  rickshaw-options="quantiles.options",
+                  rickshaw-features="quantiles.features"
+                )
           a.btn.btn-primary(href='#', role='button') Go to top &raquo;
       hr
       .row#monitoring
@@ -144,4 +164,8 @@ html(lang='en')
     
     script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    script(src="https://code.angularjs.org/1.2.24/angular.min.js")
+    script(src="http://d3js.org/d3.v3.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.js")
+    script(src="javascripts/report.js")
     
