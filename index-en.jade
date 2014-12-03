@@ -19,13 +19,13 @@ html(lang='en')
       // Jumbotron
       .jumbotron
         .row
-          .col-lg-6
+          .col-lg-5.text-center
             img.img-rounded(src='images/tank192.jpg')
             h1
               | Yandex.Tank
             p
               i a performance measurement tool
-          .col-lg-6
+          .col-lg-7
             blockquote
               p Once we accept our limits, we go beyond them.
               footer Albert Einstein
@@ -42,38 +42,38 @@ html(lang='en')
             em phantom 
             | load engine written in pure C++ to generate big amount of load from one machine.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#phantom', role='button') View details &raquo;
         .col-lg-4
           h2 Interactive reports
           p
             | See how your system behaves under load while running the test. Save report when the test is over and email it to your colleagues.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#reports', role='button') View details &raquo;
         .col-lg-4
           h2 Monitoring plugin
           p
             | Collect all your system and business metrics by configuring monitoring plugin. The resources of the host you shooting at are monitored by default.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#monitoring', role='button') View details &raquo;
       .row
         .col-lg-4
           h2 Multiple load engines
           p
             | Use JMeter to test complex scenarios or BFG (experimental) for exotic protocols. Implement your own module for your favorite tool and use Tank’s features like OnlineReport with it.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#load_engines', role='button') View details &raquo;
         .col-lg-4
           h2 Integration
           p
             | Use Yandex.Tank with Jenkins or other CI software to automate your load tests. Store reports online. Stop your tests automatically using customizable criteria.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#integration', role='button') View details &raquo;
         .col-lg-4
           h2 Simple ammo format
           p
             | Use your access.log for shooting or generate ammo from your logs using simple script.
           p
-            a.btn.btn-primary(href='#', role='button') View details &raquo;
+            a.btn.btn-primary(href='#ammo', role='button') View details &raquo;
       hr
       .row#install
         .col-lg-6
@@ -90,9 +90,56 @@ html(lang='en')
               span.glyphicon.glyphicon-download-alt(aria-hidden="true")
               | &nbsp;download .zip
       hr
+      .row#phantom
+        .col-lg-12
+          h2 phantom
+          p
+            | Our default load generator is phantom. Phantom is an open-source web server based on coroutines. That is why it is so fast and resource efficient.
+          p
+            | Wait, the 
+            i web server
+            | ? How to use a web server as a load generator? Long time ago we added benchmarking feature to this web server so it became also a performant client. It was done in order to be able to test high capacity phantom-based services. No other tool of that time was capable of generating such amount of load using only one machine. Phantom could.
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+      .row#reports
+        .col-lg-12
+          h2 reports
+          p
+            | interactive report example
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+      .row#monitoring
+        .col-lg-12
+          h2 monitoring
+          p
+            | interactive report example
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+      .row#load_engines
+        .col-lg-12
+          h2 load engines
+          p
+            | interactive report example
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+      .row#integration
+        .col-lg-12
+          h2 integration
+          p
+            | interactive report example
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+      .row#ammo
+        .col-lg-12
+          h2 ammo
+          p
+            | interactive report example
+          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+      hr
+
       // Site footer
       .footer
-        p &copy; Yandex 2014
+        p &copy; Alexey Lavrenuke 2014
     // /container
     
     script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
