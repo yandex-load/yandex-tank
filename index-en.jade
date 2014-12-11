@@ -109,7 +109,7 @@ html(lang='en')
             | Wait, the 
             i web server
             | ? How to use a web server as a load generator? Long time ago we added benchmarking feature to this web server so it became also a performant client. It was done in order to be able to test high capacity phantom-based services. No other tool of that time was capable of generating such amount of load using only one machine. Phantom could.
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
       .row#reports
         .col-lg-12
@@ -126,35 +126,35 @@ html(lang='en')
                   rickshaw-options="quantiles.options",
                   rickshaw-features="quantiles.features"
                 )
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
       .row#monitoring
         .col-lg-12
           h2 monitoring
           p
-            | interactive report example
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+            | An extensible monitoring plugin comes with Yandex.Tank. By default it monitors four metrics on target you shoot at: CPU, Disk, Network and Memory. You can ask Tank to monitor other hosts and add some other metrics. You can even define your own metrics. You will see all these metrics in your report.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
       .row#load_engines
         .col-lg-12
           h2 load engines
           p
-            | interactive report example
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+            | There are plenty of cool load generators out there. Each one has its own advantages and disadvantages. So why choose only one? Using Yandex.Tank as a load test manager you can already choose between phantom, JMeter and BFG, more are coming and you can easily implement supporting module for your favourite load engine.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
       .row#integration
         .col-lg-12
           h2 integration
           p
-            | interactive report example
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+            | Convinient multi-level configuration system of Yandex.Tank makes it a great tool to use in a CI environment. Config files in .ini format are easy to generate programmatically and the ability to specify or override any option from command line makes it all even more flexible.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
       .row#ammo
         .col-lg-12
           h2 ammo
           p
-            | interactive report example
-          a.btn.btn-primary(href='#', role='button') Go to top &raquo;
+            | There are multiple possibilities to specify the requests you want Yandex.Tank to shoot at your server. From just a list of URI-s in your config file to full requests bodies in external file. Most common access.log format is also supported. It is not a hard job to implement your own ammo format.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
       hr
 
       // Site footer
