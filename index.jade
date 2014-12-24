@@ -1,0 +1,197 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Yandex.Tank: a performance measurement tool
+    link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
+    link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', rel='stylesheet')
+      
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.css")
+
+    style(type="text/css").
+      .rickshaw_legend li {
+        display: inline-block;
+        padding: 0 0 0 2px;
+        min-width: 80px;
+        white-space: nowrap;
+      }  
+      
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    .container
+      // Jumbotron
+      .jumbotron
+        .row
+          .col-lg-5.text-center
+            img.img-rounded(src='images/tank192.jpg')
+            h1
+              | Yandex.Tank
+            p
+              i a performance measurement tool
+          .col-lg-7
+            blockquote
+              p Once we accept our limits, we go beyond them.
+              footer Albert Einstein
+            p
+              | Find out about your app’s performance limits and bottlenecks in order to use your resources in a most effective way. Ensure your app is scalable and find a way to make it scalable. Use Yandex.Tank to choose a reliable technology stack before you even started developing your product.
+            p
+              a.btn.btn-lg.btn-success(href='#install', role='button') Get started today
+      // Example row of columns
+      .row
+        .col-lg-4
+          h2 100 000+ RPS
+          p
+            | Use 
+            em phantom 
+            | load engine written in pure C++ to generate big amount of load from one machine.
+          p
+            a.btn.btn-primary(href='#phantom', role='button') View details &raquo;
+        .col-lg-4
+          h2 Interactive reports
+          p
+            | See how your system behaves under load while running the test. Save report when the test is over and email it to your colleagues.
+          p
+            a.btn.btn-primary(href='#reports', role='button') View details &raquo;
+        .col-lg-4
+          h2 Monitoring plugin
+          p
+            | Collect all your system and business metrics by configuring monitoring plugin. The resources of the host you shooting at are monitored by default.
+          p
+            a.btn.btn-primary(href='#monitoring', role='button') View details &raquo;
+      .row
+        .col-lg-4
+          h2 Multiple load engines
+          p
+            | Use JMeter to test complex scenarios or BFG (experimental) for exotic protocols. Implement your own module for your favorite tool and use Tank’s features like OnlineReport with it.
+          p
+            a.btn.btn-primary(href='#load_engines', role='button') View details &raquo;
+        .col-lg-4
+          h2 Integration
+          p
+            | Use Yandex.Tank with Jenkins or other CI software to automate your load tests. Store reports online. Stop your tests automatically using customizable criteria.
+          p
+            a.btn.btn-primary(href='#integration', role='button') View details &raquo;
+        .col-lg-4
+          h2 Simple ammo format
+          p
+            | Use your access.log for shooting or generate ammo from your logs using simple script.
+          p
+            a.btn.btn-primary(href='#ammo', role='button') View details &raquo;
+      hr
+      .row#install
+        .col-lg-6
+          h2 Install from PPA
+          p
+            | Add our repository and install:
+            pre
+              | sudo add-apt-repository ppa:yandex-load/main
+              | sudo apt-get update && sudo apt-get install yandex-load-tank-base
+        .col-lg-6
+          h2 Download archive
+          p
+            a(href="https://github.com/yandex/yandex-tank/archive/master.zip")
+              span.glyphicon.glyphicon-download-alt(aria-hidden="true")
+              | &nbsp;download .zip
+      hr
+      .row#phantom
+        .col-lg-12
+          h2 phantom
+          p
+            | Our default load generator is phantom. Phantom is an open-source web server based on coroutines. That is why it is so fast and resource efficient.
+          p
+            | Wait, the 
+            i web server
+            | ? How to use a web server as a load generator? Long time ago we added benchmarking feature to this web server so it became also a performant client. It was done in order to be able to test high capacity phantom-based services. No other tool of that time was capable of generating such amount of load using only one machine. Phantom could.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+      .row#reports
+        .col-lg-12
+          h2 reports
+          p
+            | One look is worth a thousand words, so here is an interactive example. This is one of the most important charts from the report that Tank shows you: a quantile graph. There are response time quantiles for each second on it, so that you can examine that, for example, at 16:16:54 75% of responses were faster then 45 milliseconds. Give it a try!
+          .app.container(ng-app="ng-tank-report", ng-controller="TankReport")
+            .panel.panel-default
+              .panel-heading
+                h3.panel-title {{quantiles.name}}
+              .panel-body
+                rickshaw.panel-body(
+                  rickshaw-series="quantiles.series",
+                  rickshaw-options="quantiles.options",
+                  rickshaw-features="quantiles.features"
+                )
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+      .row#monitoring
+        .col-lg-12
+          h2 monitoring
+          p
+            | An extensible monitoring plugin comes with Yandex.Tank. By default it monitors four metrics on target you shoot at: CPU, Disk, Network and Memory. You can ask Tank to monitor other hosts and add some other metrics. You can even define your own metrics. You will see all these metrics in your report.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+      .row#load_engines
+        .col-lg-12
+          h2 load engines
+          p
+            | There are plenty of cool load generators out there. Each one has its own advantages and disadvantages. So why choose only one? Using Yandex.Tank as a load test manager you can already choose between phantom, JMeter and BFG, more are coming and you can easily implement supporting module for your favourite load engine.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+      .row#integration
+        .col-lg-12
+          h2 integration
+          p
+            | Convinient multi-level configuration system of Yandex.Tank makes it a great tool to use in a CI environment. Config files in .ini format are easy to generate programmatically and the ability to specify or override any option from command line makes it all even more flexible.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+      .row#ammo
+        .col-lg-12
+          h2 ammo
+          p
+            | There are multiple possibilities to specify the requests you want Yandex.Tank to shoot at your server. From just a list of URI-s in your config file to full requests bodies in external file. Most common access.log format is also supported. It is not a hard job to implement your own ammo format.
+          a.btn.btn-default(href='#', role='button') Go to top &raquo;
+      hr
+
+      // Site footer
+      .footer
+        p &copy; Alexey Lavrenuke 2014
+    // /container
+    
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    script(src="https://code.angularjs.org/1.2.24/angular.min.js")
+    script(src="http://d3js.org/d3.v3.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.js")
+    script(src="javascripts/report.js")
+    
+    // Yandex.Metrika
+    script(type="text/javascript").
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter27357737 = new Ya.Metrika({
+                        id:27357737,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    noscript
+      div
+        img(src="//mc.yandex.ru/watch/27357737", style="position:absolute; left:-9999px;", alt="")
