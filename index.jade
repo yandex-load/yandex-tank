@@ -45,6 +45,12 @@ html(lang='en')
               a.btn.btn-lg.btn-success(href='#install', role='button') Get started today
               span &nbsp;
               a.btn.btn-lg.btn-default(href='http://yandextank.readthedocs.org/en/latest/', target='blank', role='button') Documentation
+              span &nbsp;
+              .gitter
+                script(type="text/javascript").
+                  ((window.gitter = {}).chat = {}).options = {
+                    room: 'yandex/yandex-tank'
+                  };
       // Example row of columns
       .row
         .col-lg-4
@@ -195,7 +201,8 @@ html(lang='en')
     script(src="http://d3js.org/d3.v3.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.js")
     script(src="javascripts/report.js")
-    
+    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js", async, defer)
+
     // Yandex.Metrika
     script(type="text/javascript").
         (function (d, w, c) {
