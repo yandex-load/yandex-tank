@@ -15,6 +15,8 @@ Line format: ``GET||/url||case_tag||body(optional)``
   
     import sys
     
+    def utf8len(s):
+    	return len(s.encode('utf-8'))
 	
     def make_ammo(method, url, headers, case, body):
         """ makes phantom ammo """
@@ -45,7 +47,7 @@ Line format: ``GET||/url||case_tag||body(optional)``
             "%s"
         )
   
-        return ammo_template % (len(req), case, req)
+        return ammo_template % (utf8len(req), case, req)
   
   
     def main():
